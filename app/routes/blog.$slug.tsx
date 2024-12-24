@@ -12,8 +12,17 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 export default function Post() {
   const { image, title, content } = useLoaderData<typeof loader>();
   return (
-    <div>
-      <img src={`${directus.url}assets/${image}?width=600`} alt='' />
+    <div className='space-y-4'>
+      <img
+        src={`${directus.url}assets/${image}`}
+        alt=''
+        className='
+        w-full
+        object-cover
+        h-96
+        rounded-lg
+      '
+      />
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: content }}></div>
     </div>

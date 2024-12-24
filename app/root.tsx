@@ -1,6 +1,7 @@
 import {
   Links,
   Meta,
+  MetaFunction,
   NavLink,
   Outlet,
   Scripts,
@@ -24,6 +25,22 @@ export const links: LinksFunction = () => [
   },
 ];
 
+export const meta: MetaFunction = () => {
+  return [
+    {
+      title: "Tobias Barsnes",
+    },
+  ];
+};
+
+const linkClasses =
+  "text-white underline underline-offset-4 hover:text-blue-300 transition-colors duration-200 ease-in-out font-semibold";
+
+const navLinks = [
+  { to: "/about", text: "About" },
+  { to: "/blog", text: "Blog" },
+];
+
 export function Layout() {
   return (
     <html lang='en'>
@@ -34,10 +51,21 @@ export function Layout() {
         <Links />
       </head>
       <body>
-        <nav>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/about'>About</NavLink>
-          <NavLink to='/blog'>Blog</NavLink>
+        <nav className='flex items-center align-center p-4 space-x-4 bg-gray-800 text-white'>
+          <NavLink to='/'>
+            <img src='/logo.png' alt='Logo' className='h-8' />
+          </NavLink>
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }): string =>
+                `${linkClasses} ${isActive ? "no-underline" : ""}`
+              }
+            >
+              {link.text}
+            </NavLink>
+          ))}
         </nav>
         <div className='content'>
           <Outlet />

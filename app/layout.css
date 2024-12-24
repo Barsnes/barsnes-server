@@ -1,19 +1,7 @@
 nav {
-  @apply bg-gray-900;
-
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: flex-start;
-  gap: 1rem;
-
   a {
-    @apply text-white;
-    text-decoration: underline;
-    text-underline-offset: 0.5rem;
-
-    &:hover {
-      @apply text-gray-200;
+    &.active {
+      text-decoration: none;
     }
   }
 }
