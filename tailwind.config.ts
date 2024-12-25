@@ -19,6 +19,7 @@ export default {
 			colors: {
 				white: 'rgb(217, 217, 217)',
 				black: 'rgb(15, 14, 14)',
+				orange: '#ff5511',
 			},
 		},
 	},

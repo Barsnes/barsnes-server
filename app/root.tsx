@@ -12,6 +12,7 @@ import type { LinksFunction } from '@remix-run/node';
 import './tailwind.css';
 import './layout.css';
 import BackgroundLines from './components/background-lines';
+import { Cursor } from './components/Cursor';
 
 export const links: LinksFunction = () => [
 	{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -87,9 +88,12 @@ export function Layout() {
           pt-8
           bg-black
           text-white
+					min-h-screen
+					mx-auto w-full max-w-7xl px-4 md:px-6
         '
 				>
 					<Outlet />
+					<Cursor />
 				</div>
 				<BackgroundLines />
 				<ScrollRestoration />

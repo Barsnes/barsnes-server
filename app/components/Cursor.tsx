@@ -1,13 +1,12 @@
 import { type RefObject, useEffect, useRef } from 'react';
 import { useMotionValue, useSpring, frame, motion } from 'motion/react';
 
-const WIDTH = 50;
+const WIDTH = 25;
 
 export const Cursor = () => {
 	return (
 		<>
 			<CursorCircleDelay />
-			<DotCurstorCircle />
 		</>
 	);
 };
@@ -24,12 +23,12 @@ const CursorCircleDelay = () => {
 		<>
 			<motion.div
 				ref={ref}
+				className='border-white border-[1px] rounded-full fixed pointer-events-none z-50'
 				style={{
 					width: WIDTH,
 					height: WIDTH,
 					borderRadius: '50%',
 					backgroundColor: 'transparent',
-					border: '3px solid white',
 					position: 'fixed',
 					y,
 					x,
@@ -43,33 +42,6 @@ const CursorCircleDelay = () => {
 				exit={{ scale: 0 }}
 			/>
 		</>
-	);
-};
-
-const DotCurstorCircle = () => {
-	const ref = useRef(null);
-	const { x, y } = useFollowPointer(ref, {
-		stiffness: 100000,
-	});
-
-	return (
-		<motion.div
-			ref={ref}
-			style={{
-				width: WIDTH / 4,
-				height: WIDTH / 4,
-				borderRadius: '50%',
-				backgroundColor: '#ff5511',
-				position: 'fixed',
-				y,
-				x,
-				pointerEvents: 'none',
-				zIndex: 9999,
-			}}
-			initial={{ scale: 0 }}
-			animate={{ scale: 1 }}
-			exit={{ scale: 0 }}
-		/>
 	);
 };
 

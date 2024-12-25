@@ -26,7 +26,7 @@ export default function Blog() {
 	const { posts } = useLoaderData<typeof loader>();
 
 	return (
-		<div className='px-6'>
+		<div>
 			<h1 className='text-5xl'>Blog Posts</h1>
 			<ul className='space-y-4 grid gap-4 grid-cols-1 sm:grid-cols-2'>
 				{posts.map((post) => {

@@ -34,9 +34,22 @@ export const meta: MetaFunction = () => {
 export default function Index() {
 	const { title, description } = useLoaderData<typeof loader>();
 	return (
-		<div>
-			<h1>{title}</h1>
-			<p>{description}</p>
+		<div
+			className='
+			flex flex-col items-start justify-start
+			sm:items-center sm:justify-between sm:flex-row
+			gap-8 h-4/5
+		'
+		>
+			<div>
+				<h1 className='text-8xl'>{title}</h1>
+				<p>{description}</p>
+			</div>
+			<img
+				src='/images/root.png'
+				alt='Tobias in front of an orange backdrop'
+				className='w-96 h-auto'
+			/>
 		</div>
 	);
 }
