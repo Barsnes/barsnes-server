@@ -5,6 +5,9 @@ import { Link, useLoaderData } from "@remix-run/react";
 export const loader = async () => {
   const posts = await directus.request(
     readItems("posts", {
+      filter: {
+        published: { _eq: true },
+      },
       fields: [
         "slug",
         "title",
@@ -21,8 +24,6 @@ export const loader = async () => {
 
 export default function Blog() {
   const { posts } = useLoaderData<typeof loader>();
-
-  console.log(posts);
 
   return (
     <div>

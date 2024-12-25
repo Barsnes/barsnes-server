@@ -22,6 +22,7 @@ type Post = {
   content: string;
   published_date: string;
   slug: string;
+  published: boolean;
 };
 
 type Schema = {
