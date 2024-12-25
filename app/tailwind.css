@@ -4,7 +4,12 @@
 
 html,
 body {
-  @apply bg-gray-950;
+  @apply bg-black text-white;
 
   color-scheme: dark;
+  cursor: none;
+}
+
+* {
+  box-sizing: border-box;
 }

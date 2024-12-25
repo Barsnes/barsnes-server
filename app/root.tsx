@@ -11,6 +11,7 @@ import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
 import "./layout.css";
+import { Cursor } from "./components/Cursor";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,8 +34,14 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+{
+  /* navlinks should be huge and brutalist */
+}
 const linkClasses =
-  "text-white underline underline-offset-4 hover:text-blue-300 transition-colors duration-200 ease-in-out font-semibold";
+  "text-xl font-semibold py-4 px-6 border-white border-r-2 underline hover:no-underline hover:text-black hover:bg-white h-16";
+
+const unactiveClasses = "text-white no-underline";
+const activeClasses = "text-black bg-white no-underline";
 
 const navLinks = [
   { to: "/about", text: "About" },
@@ -53,8 +60,19 @@ export function Layout() {
         <Links />
       </head>
       <body>
-        <nav className='flex items-center align-center p-4 space-x-4 bg-gray-800 text-white'>
-          <NavLink to='/'>
+        {/* make the nav brutalist style */}
+        <nav
+          className='flex items-center align-center
+        bg-black text-white font-semibold
+        border-b-2 border-white
+        '
+        >
+          <NavLink
+            to='/'
+            className={({ isActive }): string =>
+              `${linkClasses} ${isActive ? activeClasses : unactiveClasses}`
+            }
+          >
             <img src='/logo.png' alt='Logo' className='h-8' />
           </NavLink>
           {navLinks.map((link) => (
@@ -62,15 +80,23 @@ export function Layout() {
               key={link.to}
               to={link.to}
               className={({ isActive }): string =>
-                `${linkClasses} ${isActive ? "no-underline" : ""}`
+                `${linkClasses} ${isActive ? activeClasses : unactiveClasses}`
               }
             >
               {link.text}
             </NavLink>
           ))}
         </nav>
-        <div className='content'>
+        {/* should be brutalist */}
+        <div
+          className='
+          pt-8
+          bg-black
+          text-white
+        '
+        >
           <Outlet />
+          <Cursor />
         </div>
         <ScrollRestoration />
         <Scripts />
