@@ -1,6 +1,8 @@
 import directus from '../lib/directus';
 import { readSingleton } from '@directus/sdk';
 import { type MetaFunction, useLoaderData } from '@remix-run/react';
+import { div } from 'motion/react-client';
+import Paragraph from '~/components/text-scroll-reveal';
 import { metaTitle } from '~/lib/meta';
 
 export const loader = async () => {
@@ -34,22 +36,28 @@ export const meta: MetaFunction = () => {
 export default function Index() {
 	const { title, description } = useLoaderData<typeof loader>();
 	return (
-		<div
-			className='
+		<>
+			<div
+				className='
 			flex flex-col items-start justify-start
 			sm:items-center sm:justify-between sm:flex-row
 			gap-8 h-4/5
-		'
-		>
-			<div>
-				<h1 className='text-8xl'>{title}</h1>
-				<p>{description}</p>
+			'
+			>
+				<div>
+					<h1 className='text-8xl'>{title}</h1>
+					<p>{description}</p>
+				</div>
+				<img
+					src='/images/root.png'
+					alt='Tobias in front of an orange backdrop'
+					className='w-96 h-auto'
+				/>
 			</div>
-			<img
-				src='/images/root.png'
-				alt='Tobias in front of an orange backdrop'
-				className='w-96 h-auto'
-			/>
-		</div>
+			<div className='mt-32 pb-[1000px]'>
+				<h2 className='text-5xl font-semibold mb-6'>About</h2>
+				<Paragraph paragraph='Webdeveloper and esports enthusiast based in Norway.' />
+			</div>
+		</>
 	);
 }
