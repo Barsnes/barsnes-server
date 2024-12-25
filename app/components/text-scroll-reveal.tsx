@@ -19,7 +19,7 @@ export default function Paragraph({
 	const container = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: container,
-		offset: ['start 0.9', 'start 0.25'],
+		offset: ['start 0.9', 'start 0.35'],
 	});
 
 	const words = paragraph.split(' ');
