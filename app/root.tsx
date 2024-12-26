@@ -35,6 +35,8 @@ export const meta: MetaFunction = () => {
 	return [
 		{
 			title: 'Tobias Barsnes',
+			description: 'Webdeveloper and esports enthusiast based in Norway.',
+			image: '/images/meta.png',
 		},
 	];
 };

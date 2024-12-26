@@ -12,7 +12,7 @@ export const loader = async () => {
 
 const metadata = {
 	title: metaTitle('Home'),
-	description: 'This is the home page',
+	description: 'Webdeveloper and esports enthusiast based in Norway.',
 };
 
 export const meta: MetaFunction = () => {

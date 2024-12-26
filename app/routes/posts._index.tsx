@@ -1,6 +1,14 @@
 import directus from '~/lib/directus';
 import { readItems } from '@directus/sdk';
-import { Link, useLoaderData } from '@remix-run/react';
+import { Link, type MetaFunction, useLoaderData } from '@remix-run/react';
+import { mapMetadata, metaTitle } from '~/lib/meta';
+
+export const meta: MetaFunction = () => {
+	return mapMetadata({
+		title: metaTitle('Posts'),
+		description: 'Posts by Tobias Barsnes',
+	});
+};
 
 export const loader = async () => {
 	const posts = await directus.request(
