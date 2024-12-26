@@ -6,6 +6,7 @@ import {
 	Outlet,
 	Scripts,
 	ScrollRestoration,
+	useRouteError,
 } from '@remix-run/react';
 import type { LinksFunction } from '@remix-run/node';
 
@@ -100,6 +101,24 @@ export function Layout() {
 				</div>
 				<BackgroundLines />
 				<ScrollRestoration />
+				<Scripts />
+			</body>
+		</html>
+	);
+}
+
+export function ErrorBoundary() {
+	const error = useRouteError();
+	console.error(error);
+	return (
+		<html lang='en'>
+			<head>
+				<title>Oh no!</title>
+				<Meta />
+				<Links />
+			</head>
+			<body>
+				{/* add the UI you want your users to see */}
 				<Scripts />
 			</body>
 		</html>
