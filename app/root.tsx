@@ -12,7 +12,7 @@ import type { LinksFunction } from '@remix-run/node';
 import './tailwind.css';
 import './layout.css';
 import BackgroundLines from './components/background-lines';
-import { Cursor } from './components/cursor';
+import { Cursor } from './components/cursor-circle';
 export const links: LinksFunction = () => [
 	{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 	{
