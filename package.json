@@ -4,7 +4,7 @@
 	"sideEffects": false,
 	"type": "module",
 	"scripts": {
-		"build": "remix vite:build",
+		"build": "remix vite:build --emptyOutDir --minify='esbuild' --sourcemapClient",
 		"dev": "remix vite:dev",
 		"lint": "biome lint",
 		"start": "remix-serve ./build/server/index.js",

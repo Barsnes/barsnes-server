@@ -12,7 +12,7 @@ import type { LinksFunction } from '@remix-run/node';
 import './tailwind.css';
 import './layout.css';
 import BackgroundLines from './components/background-lines';
-import { Cursor } from './components/Cursor';
+import { Cursor } from './components/cursor';
 
 export const links: LinksFunction = () => [
 	{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -36,7 +36,7 @@ export const meta: MetaFunction = () => {
 };
 
 const linkClasses =
-	'text-xl font-semibold py-4 px-6 border-white border-r-2 underline hover:no-underline hover:text-black hover:bg-white h-16';
+	'text-xl font-semibold py-4 px-6 border-white border-r-2 underline hover:no-underline hover:text-black hover:bg-white focus-visible:no-underline focus-visible:text-black focus-visible:bg-white h-16';
 
 const unactiveClasses = 'text-white no-underline';
 const activeClasses = 'text-black bg-white no-underline';
