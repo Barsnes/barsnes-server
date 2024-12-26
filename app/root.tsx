@@ -13,7 +13,6 @@ import './tailwind.css';
 import './layout.css';
 import BackgroundLines from './components/background-lines';
 import { Cursor } from './components/cursor';
-
 export const links: LinksFunction = () => [
 	{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 	{
