@@ -89,7 +89,13 @@ const Char = ({
 	return (
 		<span>
 			<span className='absolute opacity-20'>{children}</span>
-			<motion.span style={{ opacity: opacity }}>{children}</motion.span>
+			<motion.span
+				style={{ opacity: opacity }}
+				className='select-none pointer-events-none'
+				aria-hidden
+			>
+				{children}
+			</motion.span>
 		</span>
 	);
 };

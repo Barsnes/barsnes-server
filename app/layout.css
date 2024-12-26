@@ -23,9 +23,23 @@ h1 {
 	margin-bottom: 1rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Cantata One, serif;
+}
+
 p {
 	@apply text-lg;
 	line-height: 1.5;
+}
+
+*::selection {
+	@apply bg-white;
+	@apply text-black;
 }
 
 .blog-post {
