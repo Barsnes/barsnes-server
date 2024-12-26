@@ -22,12 +22,12 @@ export const loader = async () => {
 	return { posts };
 };
 
-export default function Blog() {
+export default function Posts() {
 	const { posts } = useLoaderData<typeof loader>();
 
 	return (
 		<div>
-			<h1 className='text-5xl'>Blog Posts</h1>
+			<h1 className='text-5xl'>Posts</h1>
 			<ul className='space-y-4 grid gap-4 grid-cols-1 sm:grid-cols-2'>
 				{posts.map((post) => {
 					return (
@@ -39,7 +39,7 @@ export default function Blog() {
               hover:bg-black hover:text-white
             '
 						>
-							<Link to={`/blog/${post.slug}`}>
+							<Link to={`/posts/${post.slug}`}>
 								<img
 									src={`${directus.url}assets/${post.image}`}
 									alt=''

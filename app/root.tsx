@@ -46,7 +46,7 @@ const activeClasses = 'text-black bg-white no-underline';
 
 const navLinks = [
 	{ to: '/about', text: 'About' },
-	{ to: '/blog', text: 'Blog' },
+	{ to: '/posts', text: 'Posts' },
 ];
 
 export function Layout() {

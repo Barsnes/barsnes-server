@@ -12,7 +12,7 @@ export const Cursor = () => {
 };
 
 const CursorCircleDelay = () => {
-	const ref = useRef(null);
+	const ref = useRef<HTMLDivElement>(null);
 	const { x, y } = useFollowPointer(ref, {
 		damping: 15,
 		stiffness: 90,
@@ -34,7 +34,7 @@ const CursorCircleDelay = () => {
 					x,
 					pointerEvents: 'none',
 					zIndex: 9999,
-					/* invert inside */
+					opacity: 0,
 					mixBlendMode: 'difference',
 				}}
 				initial={{ scale: 0 }}
@@ -66,6 +66,7 @@ export function useFollowPointer(
 
 		const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
 			const element = ref.current as HTMLElement;
+			element.style.opacity = '1';
 
 			frame.read(() => {
 				xPoint.set(clientX - element.offsetLeft - element.offsetWidth / 2);

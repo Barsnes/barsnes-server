@@ -41,20 +41,20 @@ export default function Index() {
 				className='
 			flex flex-col items-start justify-start
 			sm:items-center sm:justify-between sm:flex-row
-			gap-8 h-4/5
+			gap-8 h-4/5 pb-32
 			'
 			>
 				<div>
-					<h1 className='text-8xl'>{title}</h1>
+					<h1 className='md:text-8xl text-5xl'>{title}</h1>
 					<p>{description}</p>
 				</div>
 				<img
 					src='/images/root.png'
 					alt='Tobias in front of an orange backdrop'
-					className='w-96 h-auto'
+					className='sm:w-96 w-fit h-auto'
 				/>
 			</div>
-			<div className='mt-32 pb-[1000px]'>
+			<div className='pb-[1000px]'>
 				<h2 className='text-5xl font-semibold mb-6'>About</h2>
 				<Paragraph paragraph='Webdeveloper and esports enthusiast based in Norway.' />
 			</div>
