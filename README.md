@@ -1,3 +1,3 @@
 # Barsnes.dev root website
 
-https://barsnes.dev
+https://barsnes.dev !
