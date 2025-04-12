@@ -38,6 +38,10 @@ export const meta: MetaFunction = () => {
 			description: 'Webdeveloper and esports enthusiast based in Norway.',
 			image: '/images/meta.png',
 		},
+		{
+			name: 'google-adsense-account',
+			content: 'ca-pub-6482501953820040',
+		},
 	];
 };
 
