@@ -108,6 +108,11 @@ export function Layout() {
 				<BackgroundLines />
 				<ScrollRestoration />
 				<Scripts />
+				<script 
+					async 
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6482501953820040"
+					crossOrigin="anonymous"
+				></script>
 			</body>
 		</html>
 	);
