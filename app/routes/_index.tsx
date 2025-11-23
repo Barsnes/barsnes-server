@@ -81,7 +81,7 @@ export default function Index() {
 							>
 								<a
 									href={`/posts/${post.slug}`}
-									className='block border-4 border-[rgb(217,217,217)] p-6 hover:bg-[rgb(217,217,217)] hover:text-black transition-all duration-200 hover:shadow-[8px_8px_0px_0px_rgba(217,217,217,0.8)]'
+									className='block border-4 border-[rgb(217,217,217)] p-6 hover:bg-[rgb(217,217,217)] hover:text-black transition-all duration-200 hover:shadow-[8px_8px_0px_0px_rgba(217,217,217)]'
 								>
 									<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tight leading-none mb-4'>
 										{post.title}
