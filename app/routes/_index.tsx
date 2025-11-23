@@ -81,7 +81,7 @@ export default function Index() {
 							>
 								<a
 									href={`/posts/${post.slug}`}
-									className='block border-4 border-white p-6 hover:bg-white hover:text-black transition-all duration-200 hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.8)]'
+									className='block border-4 border-[rgb(217,217,217)] p-6 hover:bg-[rgb(217,217,217)] hover:text-black transition-all duration-200 hover:shadow-[8px_8px_0px_0px_rgba(217,217,217,0.8)]'
 								>
 									<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tight leading-none mb-4'>
 										{post.title}
@@ -94,7 +94,7 @@ export default function Index() {
 										</p>
 									)}
 									<div className='flex items-center gap-2 text-sm font-mono uppercase'>
-										<span className='bg-white text-black px-2 py-1 group-hover/item:bg-black group-hover/item:text-white'>
+										<span className='bg-[rgb(217,217,217)] text-black px-2 py-1 group-hover/item:bg-black group-hover/item:text-[rgb(217,217,217)]'>
 											{post.published_date}
 										</span>
 									</div>
