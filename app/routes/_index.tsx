@@ -1,13 +1,26 @@
 import directus from '../lib/directus';
-import { readSingleton } from '@directus/sdk';
-import { type MetaFunction, useLoaderData } from '@remix-run/react';
-import { div } from 'motion/react-client';
-import Paragraph from '~/components/text-scroll-reveal';
+import { readItems, readSingleton } from '@directus/sdk';
+import { useLoaderData, type MetaFunction } from '@remix-run/react';
 import { metaTitle } from '~/lib/meta';
 
 export const loader = async () => {
 	const global = await directus.request(readSingleton('global'));
-	return global;
+	const posts = await directus.request(
+		readItems('posts', {
+			filter: {
+				published: { _eq: true },
+			},
+			fields: [
+				'slug',
+				'title',
+				'published_date',
+				/* @ts-expect-error TS2322 */
+				{ author: ['name'] },
+			],
+			sort: ['-published_date'],
+		}),
+	);
+	return { global, posts };
 };
 
 const metadata = {
@@ -34,7 +47,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-	const { title, description } = useLoaderData<typeof loader>();
+	const { global, posts } = useLoaderData<typeof loader>();
+	const { title, description } = global;
 	return (
 		<>
 			<div
@@ -55,8 +69,40 @@ export default function Index() {
 				/>
 			</div>
 			<div className='pb-[1000px]'>
-				<h2 className='text-5xl font-semibold mb-6'>About</h2>
-				<Paragraph paragraph='Webdeveloper and esports enthusiast based in Norway.' />
+				<h2 className='text-5xl font-black mb-12 uppercase tracking-tight'>
+					Posts
+				</h2>
+				<ul className='space-y-6 group/list'>
+					{posts.map((post) => {
+						return (
+							<li
+								key={post.slug}
+								className='group/item transition-opacity duration-300 hover:!opacity-100 group-hover/list:opacity-40'
+							>
+								<a
+									href={`/posts/${post.slug}`}
+									className='block border-4 border-white p-6 hover:bg-white hover:text-black transition-all duration-200 hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.8)]'
+								>
+									<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tight leading-none mb-4'>
+										{post.title}
+									</h3>
+									{/* @ts-expect-error - excerpt field exists in API */}
+									{post.excerpt && (
+										<p className='text-base font-mono leading-relaxed mb-4 group-hover/item:text-black'>
+											{/* @ts-expect-error - excerpt field exists in API */}
+											{post.excerpt}
+										</p>
+									)}
+									<div className='flex items-center gap-2 text-sm font-mono uppercase'>
+										<span className='bg-white text-black px-2 py-1 group-hover/item:bg-black group-hover/item:text-white'>
+											{post.published_date}
+										</span>
+									</div>
+								</a>
+							</li>
+						);
+					})}
+				</ul>
 			</div>
 		</>
 	);

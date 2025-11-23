@@ -51,10 +51,7 @@ const linkClasses =
 const unactiveClasses = 'text-white no-underline';
 const activeClasses = 'text-black bg-white no-underline';
 
-const navLinks = [
-	{ to: '/about', text: 'About' },
-	{ to: '/posts', text: 'Posts' },
-];
+const navLinks = [{ to: '/about', text: 'About' }];
 
 export function Layout() {
 	return (
@@ -108,11 +105,11 @@ export function Layout() {
 				<BackgroundLines />
 				<ScrollRestoration />
 				<Scripts />
-				<script 
-					async 
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6482501953820040"
-					crossOrigin="anonymous"
-				></script>
+				<script
+					async
+					src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6482501953820040'
+					crossOrigin='anonymous'
+				/>
 			</body>
 		</html>
 	);
