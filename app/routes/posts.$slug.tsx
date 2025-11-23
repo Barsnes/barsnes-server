@@ -1,12 +1,20 @@
 import type { LoaderFunctionArgs } from '@remix-run/node';
 import directus from '../lib/directus';
 import { readItem } from '@directus/sdk';
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData, type MetaFunction } from '@remix-run/react';
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const { slug } = params;
 	const post = await directus.request(readItem('posts', slug as string));
 	return post;
+};
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+	return [
+		{
+			title: data ? `${data.title} // Tobias Barsnes` : 'Post not found',
+		},
+	];
 };
 
 export default function Post() {
