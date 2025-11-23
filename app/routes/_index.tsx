@@ -68,7 +68,7 @@ export default function Index() {
 					className='sm:w-96 w-fit h-auto'
 				/>
 			</div>
-			<div className='pb-[1000px]'>
+			<div>
 				<h2 className='text-5xl font-black mb-12 uppercase tracking-tight'>
 					Posts
 				</h2>

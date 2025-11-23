@@ -195,3 +195,76 @@ p {
 		background-color: rgba(217, 217, 217, 0.1);
 	}
 }
+
+/* Brutalist Footer */
+.brutalist-footer {
+	background-color: rgb(15, 14, 14);
+	border-top: 8px solid rgb(217, 217, 217);
+	color: rgb(217, 217, 217);
+}
+
+.footer-heading {
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: -0.025em;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	border-bottom: 4px solid rgb(217, 217, 217);
+	padding-bottom: 0.5rem;
+	display: inline-block;
+}
+
+.footer-text {
+	font-family: monospace;
+	line-height: 1.7;
+	color: rgb(217, 217, 217);
+	margin-top: 1rem;
+}
+
+.footer-links {
+	list-style: none;
+	padding: 0;
+	margin-top: 1rem;
+}
+
+.footer-links li {
+	margin-bottom: 0.75rem;
+	position: relative;
+	padding-left: 1.5rem;
+}
+
+.footer-links li::before {
+	content: "▸";
+	position: absolute;
+	left: 0;
+	font-weight: 900;
+	color: #fa6432;
+}
+
+.footer-links a {
+	color: rgb(217, 217, 217);
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 0.875rem;
+	letter-spacing: 0.05em;
+	transition: all 0.2s;
+	border-bottom: 2px solid transparent;
+}
+
+.footer-links a:hover {
+	color: #fa6432;
+	border-bottom-color: #fa6432;
+}
+
+.footer-bottom {
+	margin-top: 3rem;
+	padding-top: 2rem;
+	border-top: 4px solid rgb(217, 217, 217);
+	text-align: center;
+	font-family: monospace;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	letter-spacing: 0.1em;
+}

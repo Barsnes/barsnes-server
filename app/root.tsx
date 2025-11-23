@@ -97,11 +97,76 @@ export function Layout() {
           text-white
 					min-h-screen
 					mx-auto w-full max-w-7xl px-4 md:px-6
+					pb-8
         '
 				>
 					<Outlet />
 					<Cursor />
 				</div>
+				<footer className='brutalist-footer'>
+					<div className='max-w-7xl mx-auto px-4 md:px-6 py-16'>
+						<div className='grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12'>
+							<div>
+								<h3 className='footer-heading'>Tobias Barsnes</h3>
+								<p className='footer-text'>
+									Web developer and esports enthusiast based in Norway.
+								</p>
+							</div>
+							<div>
+								<h3 className='footer-heading'>Connect</h3>
+								<ul className='footer-links'>
+									<li>
+										<a
+											href='https://github.com/barsnes'
+											target='_blank'
+											rel='noopener noreferrer'
+										>
+											GitHub
+										</a>
+									</li>
+									<li>
+										<a
+											href='https://twitter.com/torskencs'
+											target='_blank'
+											rel='noopener noreferrer'
+										>
+											Twitter
+										</a>
+									</li>
+									<li>
+										<a
+											href='https://www.linkedin.com/in/t-barsnes/'
+											target='_blank'
+											rel='noopener noreferrer'
+										>
+											LinkedIn
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<h3 className='footer-heading'>Navigation</h3>
+								<ul className='footer-links'>
+									<li>
+										<a href='/'>Home</a>
+									</li>
+									<li>
+										<a href='/about'>About</a>
+									</li>
+									<li>
+										<a href='/posts'>Posts</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div className='footer-bottom'>
+							<p>
+								© {new Date().getFullYear()} Tobias Barsnes. All rights
+								reserved.
+							</p>
+						</div>
+					</div>
+				</footer>
 				<BackgroundLines />
 				<ScrollRestoration />
 				<Scripts />
